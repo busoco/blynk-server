@@ -25,7 +25,7 @@ dir *.jar
 for /f "delims=" %%x in ('dir /od /b server*.jar') do set latestjar=%%x
 @echo on
 echo Server latest version on folder is %latestjar%
-java -jar %latestjar% -dataFolder /path
+java -jar %latestjar% -dataFolder %~dp0
 IF /I "%ERRORLEVEL%" NEQ "0" (
     ECHO Server failed to started
 )
